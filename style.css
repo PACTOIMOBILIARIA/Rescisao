@@ -1,0 +1,219 @@
+/* =========================================
+   VARIÁVEIS GLOBAIS (CUSTOM PROPERTIES)
+   *** COM AS CORES ORIGINAIS RESTAURADAS ***
+   ========================================= */
+:root {
+  --blue: #00509e;
+  --yellow: #ffc107;
+  --white: #ffffff;
+  
+  /* Cores de suporte para texto e bordas */
+  --gray-medium: #e9ecef;
+  --gray-dark: #3e6a99; /* Um azul dessaturado para texto de apoio */
+  --text-on-blue: var(--white);
+  --text-on-yellow: var(--blue);
+
+  /* Padrões de design */
+  --border-radius: 15px;
+  --shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   RESET E ESTILOS GERAIS
+   ========================================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--yellow); /* Fundo amarelo original */
+  color: var(--text-on-yellow); /* Texto azul no fundo amarelo */
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* =========================================
+   LAYOUT (agora um container transparente)
+   ========================================= */
+.card {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* =========================================
+   ACORDEÃO (com estilo original)
+   ========================================= */
+.accordion-item {
+  background: var(--blue); /* Fundo azul original */
+  color: var(--text-on-blue); /* Texto branco no fundo azul */
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Ícone de seta (chevron)  */
+.accordion-header::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 25px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.accordion-item.active .accordion-content {
+  padding-bottom: 25px;
+}
+
+/* Estilos de conteúdo dentro do acordeão */
+.accordion-content p, 
+.accordion-content ul, 
+.accordion-content blockquote {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.accordion-content ul {
+  padding-left: 20px;
+}
+.accordion-content li {
+  margin-bottom: 8px;
+}
+.accordion-content blockquote {
+  border-left: 4px solid var(--yellow);
+  padding: 10px 20px;
+  background-color: var(--gray-dark);
+  border-radius: 4px;
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
+}
+.accordion-content .warning {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  border-left: 4px solid var(--yellow);
+}
+
+/* =========================================
+   BOTÕES (com estilo original)
+   ========================================= */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.action-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--yellow);
+  color: var(--blue);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.action-button:hover {
+  background-color: var(--white);
+  transform: scale(1.05);
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+}
+.social-links {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+/* No rodapé, os links sociais serão botões, como no original */
+.social-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.social-button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+  transform: scale(1.05);
+}
+.footer p {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 15px;
+}
