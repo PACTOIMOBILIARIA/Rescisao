@@ -1,7 +1,4 @@
-/* =========================================
-   VARIÁVEIS GLOBAIS (CUSTOM PROPERTIES)
-   *** COM AS CORES ORIGINAIS RESTAURADAS ***
-   ========================================= */
+
 :root {
   --blue: #00509e;
   --yellow: #ffc107;
@@ -23,7 +20,7 @@
    ========================================= */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--yellow); /* Fundo amarelo original */
+  background-color: var(--yellow); /* Fundo amarelo */
   color: var(--text-on-yellow); /* Texto azul no fundo amarelo */
   margin: 0;
   padding: 40px 20px;
